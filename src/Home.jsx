@@ -33,7 +33,7 @@ const addClick = async()=>{
         todoName : inputVal
       }
       // create a post response 
-      let apiResponse = await axios.post("  http://localhost:3000/City",reqBody);
+      let apiResponse = await axios.post(" https://city-be-1.onrender.com/City",reqBody);
       // console.log(apiResponse);
 
       // notify the user if  task is added or not added
@@ -64,7 +64,7 @@ const getData = async()=>{
 
   try {
     
-let apiResponse = await axios.get("  http://localhost:3000/City");
+let apiResponse = await axios.get(" https://city-be-1.onrender.com/City");
 setData(apiResponse.data);
 console.log(apiResponse.data)
 
@@ -82,7 +82,7 @@ console.log(apiResponse.data)
   const deleteClick = async(id)=>{
     try {
       
-      let apiResponse = axios.delete(`  http://localhost:3000/City/${id}`);
+      let apiResponse = axios.delete(` https://city-be-1.onrender.com/City/${id}`);
       if(apiResponse.status == 200){
         alert("successfully deleted");
       }else{
@@ -105,7 +105,7 @@ const editTodo = async () =>{
   let reqBody = {
         todoName : inputVal
       }
-    let apiResponse = await axios.put(`  http://localhost:3000/City/${editId}`,reqBody);
+    let apiResponse = await axios.put(` https://city-be-1.onrender.com/City/${editId}`,reqBody);
     if(apiResponse.status==200){
       setChange(apiResponse);
       setInputVal('');
